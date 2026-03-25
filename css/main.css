@@ -158,6 +158,9 @@
 
   .btn-primary:hover {
       background: var(--primary-dark);
+      color: white;
+      text-decoration: none;
+      transform: scale(1.02);
   }
 
   .btn-secondary {
@@ -170,6 +173,8 @@
   .btn-secondary:hover {
       background: var(--bg-pill);
       border-color: var(--primary);
+      text-decoration: none;
+      transform: scale(1.02);
   }
 
   .hero-side {
