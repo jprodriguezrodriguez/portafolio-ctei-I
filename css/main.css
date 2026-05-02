@@ -328,7 +328,7 @@
   }
 
   .card.main-subcard {
-      border-color: var(--bg-pill);
+      border: 2px solid var(--primary);
       box-shadow: var(--primary-shadow);
   }
 
@@ -416,6 +416,10 @@
       flex-wrap: wrap;
       gap: 12px;
       margin-top: 18px;
+  }
+
+  .doc-actions.mb {
+    margin-bottom: 24px;
   }
 
   .doc-note {
