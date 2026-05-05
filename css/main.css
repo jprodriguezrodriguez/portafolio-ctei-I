@@ -735,6 +735,10 @@
           font-size: 0.78rem;
       }
 
+      .image-modal__scroll img {
+        min-height: 98vh;
+      }
+
       .card-table {
           border: none;
           background: transparent;
