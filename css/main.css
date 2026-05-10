@@ -20,6 +20,7 @@
       --table-border: #e2e8f0;
       --table-row-hover: #f8fafc;
       --table-accent: #0ea5e9;
+      --accent-shadow: 0 0 8px 5px #b8e9ff;
   }
 
   * {
@@ -74,29 +75,134 @@
 
   nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
   }
 
   .brand {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--primary-dark);
+      flex: 0 0 auto;
+      white-space: nowrap;
+  }
+
+  nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+  }
+
+  .brand {
+      flex: 0 0 auto;
+      white-space: nowrap;
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 1.4rem;
   }
 
   .nav-links {
+      flex: 1 1 auto;
+      min-width: 0;
       display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.4rem;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.35rem 1rem 0.65rem 0;
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scroll-padding-inline: 1rem;
+  }
+
+  .nav-links::after {
+      content: "";
+      flex: 0 0 0.5rem;
   }
 
   .nav-links a {
-      text-decoration: none;
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 0.45rem 0.75rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-right: 5px solid var(--bg-pill);
+      border-radius: 100px;
       color: var(--text);
-      font-size: 0.95rem;
-      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .nav-links a:hover {
+      background: var(--bg-badge);
+      border-color: var(--bg-pill);
+      border-right-color: var(--primary);
+      color: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(95, 3, 176, 0.08);
+  }
+
+  .nav-links a.active,
+  .nav-links a[aria-current="true"] {
+      background: var(--accent-dark);
+      border-color: var(--accent);
+      border-right-color: var(--accent);
+      color: var(--card);
+      box-shadow: var(--accent-shadow);
+  }
+
+  @media (max-width: 900px) {
+      nav {
+          flex-direction: column;
+          align-items: flex-start;
+      }
+
+      .nav-links {
+          width: 100%;
+          max-width: 100%;
+      }
+
+      .nav-links a {
+          font-size: 0.85rem;
+          min-height: 34px;
+          padding: 0.4rem 0.65rem;
+      }
+  }
+
+  .nav-links {
+      scrollbar-width: thin;
+      scrollbar-color: var(--primary) transparent;
+  }
+
+  .nav-links::-webkit-scrollbar {
+      height: 6px;
+  }
+
+  .nav-links::-webkit-scrollbar-track {
+      background: transparent;
+      border-radius: 999px;
+  }
+
+  .nav-links::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 999px;
+      border: 1px solid var(--card);
+  }
+
+  .nav-links::-webkit-scrollbar-thumb:hover {
+      background: var(--accent);
+  }
+
+  .nav-links::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 999px;
   }
 
   .hero {
@@ -219,6 +325,7 @@
 
   section {
       padding: 28px 0;
+      scroll-margin-top: 110px;
   }
 
   .section-title {
@@ -271,6 +378,11 @@
 
   /* Móvil */
   @media (max-width: 640px) {
+      section {
+          padding: 28px 0;
+          scroll-margin-top: 170px;
+      }
+
       .c-columns {
           grid-template-columns: 1fr;
       }
@@ -563,7 +675,7 @@
       vertical-align: middle;
   }
 
-    .bordered-table.td-left td {
+  .bordered-table.td-left td {
       text-align: left;
       vertical-align: middle;
   }
@@ -874,7 +986,7 @@
       .custom-table tr:hover {
           background: #fff;
       }
-      
+
       .bordered-table,
       .bordered-table td,
       .bordered-table tbody tr:last-child td,
