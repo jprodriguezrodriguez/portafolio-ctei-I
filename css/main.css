@@ -507,6 +507,7 @@
       background: var(--table-head);
   }
 
+  .bordered-table th,
   .custom-table th {
       text-align: left;
       padding: 12px;
@@ -531,6 +532,61 @@
 
   .custom-table tr:hover {
       background: var(--table-row-hover);
+  }
+
+  .bordered-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #cbd5e1;
+  }
+
+  .bordered-table th,
+  .bordered-table td {
+      border: 1px solid #cbd5e1 !important;
+  }
+
+  .bordered-table th,
+  .custom-table th {
+      border-bottom: 2px solid var(--table-accent) !important;
+  }
+
+  .bordered-table thead th {
+      text-align: center;
+      vertical-align: middle;
+  }
+
+  .bordered-table td {
+      vertical-align: top;
+  }
+
+  .bordered-table.td-center td {
+      vertical-align: middle;
+  }
+
+    .bordered-table.td-left td {
+      text-align: left;
+      vertical-align: middle;
+  }
+
+  .bordered-table tbody tr:last-child td {
+      border-bottom: 1px solid #cbd5e1 !important;
+  }
+
+  .bordered-table td[data-label="Cuantitativo Final"],
+  .bordered-table td[data-label="Cuantitativo Intermedio"],
+  .bordered-table td[data-label="Cuantitativo Proxy"],
+  .bordered-table td[data-label="Cualitativo Final"],
+  .bordered-table td[data-label="Cualitativo Intermedio"],
+  .bordered-table td[data-label="Cualitativo Proxy"] {
+      text-align: center;
+      vertical-align: middle;
+      font-weight: 800;
+      color: var(--accent-dark);
+  }
+
+  .bordered-table.quantity th:nth-child(7),
+  .bordered-table.quantity td:nth-child(7) {
+      border-left: 2px solid var(--table-accent) !important;
   }
 
   .card-table {
@@ -707,9 +763,15 @@
 
   .image-modal__scroll img {
       display: block;
-      width: 1500px;
-      max-width: none;
-      min-height: 100%;
+      min-width: 700px;
+      width: 2400px;
+  }
+
+  .image-modal__scroll img.vertical-img {
+      display: block;
+      min-width: 700px;
+      width: 1100px;
+      margin: 0 auto;
   }
 
   #marco-logico {
@@ -736,7 +798,7 @@
       }
 
       .image-modal__scroll img {
-        min-height: 98vh;
+          min-height: 98vh;
       }
 
       .card-table {
@@ -811,6 +873,14 @@
 
       .custom-table tr:hover {
           background: #fff;
+      }
+      
+      .bordered-table,
+      .bordered-table td,
+      .bordered-table tbody tr:last-child td,
+      .bordered-table.quantity td:nth-child(7),
+      .bordered-table th {
+          border: none !important;
       }
   }
 
