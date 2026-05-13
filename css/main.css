@@ -445,6 +445,10 @@
       margin-bottom: 0;
   }
 
+  .subcard.video-subcard {
+      min-width: 650px !important;
+  }
+
   .card.subcard .subcard-title {
       font-size: 1rem;
       margin-bottom: 8px;
